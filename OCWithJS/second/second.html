@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            </head>
+    <body>
+        <h3>OC与JS交互测试</h3>
+        <br>
+    
+        <p id="tmp">基于JavaScriptCore</p>
+        <br>
+        <br>
+        text:<input id="inp" type="text" name="textStr" value="">
+            <br>
+            <br>
+            <button onclick="callOC()">callToOC</button>
+            </p>
+            <script type="text/javascript">
+                function callOC(argument) {
+                    var textString = document.getElementById("inp").value
+                    popOCAlert('orange', textString)
+                }
+            
+            
+            function showAlert(argument) {
+                alert(argument)
+            }
+            
+                </script>
+            </body>
+</html>
+

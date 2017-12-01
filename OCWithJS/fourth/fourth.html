@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            </head>
+    <body>
+        <h3>OC与JS交互测试</h3>
+        <br>
+        <p id="tmp">基于WKWebView messsge handler</p>
+        <br>
+        <br>
+        text:<input id="inp" type="text" name="textStr" value="">
+            <br>
+            <br>
+            <button onclick="callOC4()">callToOC</button>
+            </p>
+            <script type="text/javascript">
+                function callOC4(argument) {
+                    var textString = document.getElementById("inp").value
+                    // var url = "nothot://test?title=banana&content=" + textString
+                    // loadURL(url)
+                    var dic = {title:"peach",content:textString}
+                    window.webkit.messageHandlers.callOC.postMessage(dic)
+
+                    //window.webkit.messageHandlers.callOC.postMessage({title:'peach',content:'textString'})
+                }
+            
+            // function loadURL(url) {
+            //     var iFrame;
+            //     iFrame = document.createElement("iframe");
+            //     iFrame.setAttribute("src", url);
+            //     iFrame.setAttribute("style", "display:none;");
+            //     iFrame.setAttribute("height", "0px");
+            //     iFrame.setAttribute("width", "0px");
+            //     iFrame.setAttribute("frameborder", "0");
+            //     document.getElementById("tmp").appendChild(iFrame);
+                
+            //     iFrame.parentNode.removeChild(iFrame);
+            //     iFrame = null;
+            // }
+            function showAlert(argument) {
+                alert(argument)
+            }
+            
+                </script>
+            </body>
+</html>
+
